@@ -1,14 +1,16 @@
-package com.example.mysticmochajava;
+package com.example.mysticmochajava.activities.logging;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MapaActivity extends AppCompatActivity {
+import com.example.mysticmochajava.R;
+
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mapa);
+        setContentView(R.layout.activity_login);
     }
 }

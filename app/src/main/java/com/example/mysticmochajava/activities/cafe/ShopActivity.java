@@ -1,14 +1,14 @@
-package com.example.mysticmochajava;
+package com.example.mysticmochajava.activities.cafe;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import com.example.mysticmochajava.R;
 
-public class PerfilActivity extends AppCompatActivity {
+public class ShopActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perfil);
+        setContentView(R.layout.activity_shop);
     }
 }
