@@ -45,16 +45,16 @@ public class database {
             newUser.put("type", user.getType());
             database.insert("users",null,newUser);
             database.close();
-            Toast.makeText(context,"Nuevo usuario guardado correctamente",Toast.LENGTH_LONG).show();
+            Toast.makeText(context,"Nuevo usuario "+user.toString(),Toast.LENGTH_LONG).show();
         }
         public User getUser(Context context,String email){
-            SQLiteDatabase database = this.getReadableDatabase();
+            SQLiteDatabase database = this.getWritableDatabase();
             User user;
-            Cursor cursor = database.rawQuery("select email,name,password,type from users where email="+email, null);
+            Cursor cursor = database.rawQuery("select email,name,password,type from users where email='"+email+"'", null);
             if (cursor.moveToFirst()){
                 user = new User(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3));
             }else {
-                user = new User("Error","Error","Error");
+                user = new User("Error","Error","Error","Error");
             }
             cursor.close();
             database.close();

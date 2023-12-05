@@ -15,11 +15,6 @@ public class User {
 
     private String type;
 
-    public User(String name, String password, String type) {
-        this.name = name;
-        this.password = password;
-        this.type = type;
-    }
     public User(String email, String name, String password, String type) {
         this.name = name;
         this.password = password;
@@ -53,6 +48,6 @@ public class User {
 
     @Override
     public String toString(){
-        return this.name;
+        return (email+name+password+type);
     }
 }
