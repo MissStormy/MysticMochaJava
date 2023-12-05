@@ -2,6 +2,10 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.MysticMochaJava" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
+        <item name="colorPrimary">#975505</item> <!-- Drawer's background -->
+        <item name="colorPrimaryDark">#965a0e</item> <!-- Button's border color -->
+        <item name="colorAccent">#b3ad8a</item> <!-- Textfield's border color and Button's hover background -->
+
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 

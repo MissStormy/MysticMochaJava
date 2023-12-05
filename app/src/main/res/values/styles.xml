@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Custom theme to be applied globally -->
+    <style name="AppTheme_Custom">
+        <!-- Customize the style properties here -->
+        <item name="android:windowBackground">#222022</item> <!-- Background color -->
+
+        <!-- Textfield style -->
+        <item name="android:radius">12dp</item> <!-- Rounded corners -->
+
+
+        <!-- Button style -->
+        <item name="android:layout_width">48dp</item> <!-- Circle width -->
+        <item name="android:layout_height">48dp</item> <!-- Circle height -->
+
+        <!-- Drawer styles -->
+        <item name="android:textSize">20sp</item> <!-- Title text size -->
+
+        <!-- Font family -->
+        <item name="android:fontFamily">@font/quicksand</item>
+        <item name="android:textColor">#b3ad8a</item>
+
+        <!-- Add other global customizations here -->
+    </style>
+
+    <!-- Specific styles -->
+    <style name="AppTheme_Custom_TextField" parent="AppTheme_Custom">
+        <item name="android:textColor">#b3ad8a</item>
+        <item name="android:background">#b3ad8a</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="AppTheme_Custom_Button" parent="AppTheme_Custom">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">#965a0e</item>
+        <item name="android:padding">16dp</item>
+    </style>
+    <!-- Style for circular buttons -->
+    <style name="CircularButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/circular_button</item>
+        <item name="android:textColor">#b3ad8a</item>
+    </style>
+
+</resources>
