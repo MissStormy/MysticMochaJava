@@ -7,6 +7,7 @@ import android.os.Bundle;
 import com.example.mysticmochajava.R;
 
 public class LoginActivity extends AppCompatActivity {
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="background">#222022</color>
+    <color name="textfieldBorder">#B3AD8A</color>
+    <color name="buttonBorder">#965A0E</color>
+    <color name="drawerBg">#975505</color>
 </resources>
