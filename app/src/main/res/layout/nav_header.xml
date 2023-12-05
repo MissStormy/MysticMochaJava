@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="250sp"
+    android:layout_height="200sp"
+    android:gravity="bottom"
+    android:padding="16dp"
+    android:background="@color/drawer"
+    android:theme="@style/AppTheme_Custom">
+
+    <ImageView
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:src="@drawable/logomm"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Patata Frita"
+        style="@style/LargeTitleText"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="patatafrita@gmail.com"/>
+
+
+</LinearLayout>

@@ -46,5 +46,11 @@
         <item name="android:button">@drawable/custom_checkbox</item>
         <item name="android:textColor">#b3ad8a</item>
     </style>
+    <!-- Custom style for larger titles -->
+    <style name="LargeTitleText" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/quicksand</item>
+        <item name="android:textColor">#b3ad8a</item>
+    </style>
 
 </resources>
