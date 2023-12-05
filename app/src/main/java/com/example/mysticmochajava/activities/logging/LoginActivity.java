@@ -19,11 +19,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void OnClickSignUp(View v){
-        Intent intent = new Intent(this, LoginSignUpActivity.class);
+        Intent intent = new Intent(LoginActivity.this, LoginSignUpActivity.class);
         startActivity(intent);
     }
     public void OnClickSignIn(View v){
-        Intent intent = new Intent(this, LoginSignInActivity.class);
+        Intent intent = new Intent(LoginActivity.this, LoginSignInActivity.class);
         startActivity(intent);
     }
 }

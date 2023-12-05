@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Custom theme to be applied globally -->
-    <style name="AppTheme_Custom">
+    <style name="AppTheme_Custom" parent="Theme.AppCompat">
         <!-- Customize the style properties here -->
         <item name="android:windowBackground">#222022</item> <!-- Background color -->
 
@@ -24,13 +24,14 @@
     </style>
 
     <!-- Specific styles -->
-    <style name="AppTheme_Custom_TextField" parent="AppTheme_Custom">
+    <style name="TextField" parent="AppTheme_Custom">
+        <item name="android:background">@drawable/custom_textfield</item>
         <item name="android:textColor">#b3ad8a</item>
-        <item name="android:background">#b3ad8a</item>
         <item name="android:padding">8dp</item>
+        <item name="android:layout_margin">8dp</item>
     </style>
 
-    <style name="AppTheme_Custom_Button" parent="AppTheme_Custom">
+    <style name="Button" parent="AppTheme_Custom">
         <item name="android:textColor">#ffffff</item>
         <item name="android:background">#965a0e</item>
         <item name="android:padding">16dp</item>
@@ -38,6 +39,11 @@
     <!-- Style for circular buttons -->
     <style name="CircularButton" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/circular_button</item>
+        <item name="android:textColor">#b3ad8a</item>
+    </style>
+    <!-- Custom style for CheckBox -->
+    <style name="CustomCheckBoxStyle" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/custom_checkbox</item>
         <item name="android:textColor">#b3ad8a</item>
     </style>
 

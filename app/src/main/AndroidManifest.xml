@@ -28,7 +28,7 @@
         <activity
             android:name=".activities.logging.LoginActivity"
             android:exported="true"
-            android:theme="@style/Theme.MysticMochaJava.NoActionBar">
+            android:theme="@style/AppTheme_Custom">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
