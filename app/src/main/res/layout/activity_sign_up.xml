@@ -25,7 +25,8 @@
         android:onClick="OnClickBack"
         android:text="Back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/CircularButton"/>
 
     <TextView
         android:id="@+id/textView"
@@ -46,7 +47,8 @@
         android:layout_marginTop="14dp"
         android:text="F"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        style="@style/CircularButton"/>
 
     <Button
         android:id="@+id/GoogleBtn"
@@ -56,7 +58,8 @@
         android:layout_marginTop="14dp"
         android:text="G"
         app:layout_constraintStart_toEndOf="@+id/FacebookBtn"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        style="@style/CircularButton"/>
 
     <EditText
         android:id="@+id/NameTxt"
@@ -90,25 +93,28 @@
 
     <Button
         android:id="@+id/EnterBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
+        style="@style/CircularButton"
+        android:layout_width="89dp"
+        android:layout_height="89dp"
         android:layout_marginTop="24dp"
         android:onClick="OnClickEnter"
         android:text="Enter"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TCChb" />
 
     <CheckBox
         android:id="@+id/TCChb"
+        style="@style/CustomCheckBoxStyle"
         android:layout_width="215dp"
         android:layout_height="49dp"
-        android:layout_marginStart="112dp"
+        android:layout_marginStart="96dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="100dp"
         android:text="I have read and accept the Terms and Conditions"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PassVerifTxt"
-        style="@style/CustomCheckBoxStyle"/>
+        app:layout_constraintTop_toBottomOf="@+id/PassVerifTxt" />
 
     <EditText
         android:id="@+id/PassTxt"
