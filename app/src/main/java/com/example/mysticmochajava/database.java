@@ -108,10 +108,10 @@ public class database {
             database.close();
             return event;
         }
-        public List<Event> getEventList(Context context,String id){
+        public List<Event> getEventList(Context context){
             SQLiteDatabase database = this.getWritableDatabase();
             List<Event> eventList = new ArrayList<>();
-            Cursor cursor = database.rawQuery("select id,name,description,datetime from events where id='"+id+"'", null);
+            Cursor cursor = database.rawQuery("select id,name,description,datetime from events", null);
             while (cursor.moveToNext()){
                 eventList.add(new Event(Integer.parseInt(cursor.getString(0)) ,cursor.getString(1),cursor.getString(2),cursor.getString(3)));
             }
@@ -142,6 +142,17 @@ public class database {
             database.close();
             return book;
         }
+        public List<Book> getBookList(Context context){
+            SQLiteDatabase database = this.getWritableDatabase();
+            List<Book> bookList = new ArrayList<>();
+            Cursor cursor = database.rawQuery("select id,title,author,synopsis,genre from books", null);
+            while (cursor.moveToNext()){
+                bookList.add(new Book(Integer.parseInt(cursor.getString(0)) ,cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4)));
+            }
+            cursor.close();
+            database.close();
+            return bookList;
+        }
         public void addMenuEntry(Context context, MenuEntry menuEntry){
             SQLiteDatabase database = this.getWritableDatabase();
             ContentValues newMenuEntry = new ContentValues();
@@ -163,6 +174,17 @@ public class database {
             cursor.close();
             database.close();
             return menuEntry;
+        }
+        public List<MenuEntry> getMenuEntryList(Context context){
+            SQLiteDatabase database = this.getWritableDatabase();
+            List<MenuEntry> menuEntryList = new ArrayList<>();
+            Cursor cursor = database.rawQuery("select id,name,description,price from menu", null);
+            while (cursor.moveToNext()){
+                menuEntryList.add(new MenuEntry(Integer.parseInt(cursor.getString(0)) ,cursor.getString(1),cursor.getString(2),Integer.parseInt(cursor.getString(3))));
+            }
+            cursor.close();
+            database.close();
+            return menuEntryList;
         }
     }
 }
