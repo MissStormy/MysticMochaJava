@@ -6,4 +6,74 @@
     android:layout_height="match_parent"
     tools:context=".activities.library.BookActivity">
 
+    <Button
+        android:id="@+id/button9"
+        style="@style/CircularButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="52dp"
+        android:text="Back"
+        app:layout_constraintEnd_toStartOf="@+id/imageView21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="92dp"
+        android:layout_height="93dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logomm"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:id="@+id/imageView26"
+        android:layout_width="417dp"
+        android:layout_height="272dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView21"
+        app:srcCompat="@drawable/card" />
+
+    <TextView
+        android:id="@+id/textView22"
+        style="@style/LargeTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="El unicornio feliz"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="388dp" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Miss Stormy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="434dp" />
+
+    <ScrollView
+        android:layout_width="363dp"
+        android:layout_height="242dp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="470dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor justo, fringilla interdum diam volutpat, tincidunt vulputate risus. Vivamus tincidunt hendrerit magna, ac tristique dolor sollicitudin a. Sed ipsum tellus, commodo quis rhoncus eu, feugiat a ante. Aliquam imperdiet odio vitae mi auctor lobortis. Mauris vel fermentum leo. Morbi sed orci odio. Quisque rutrum mauris elit, quis efficitur libero rhoncus sed.  Curabitur dictum tincidunt quam eu blandit. Phasellus at fringilla nulla. Donec id nisi nec elit efficitur rutrum a ut ipsum. Vestibulum venenatis ipsum at libero dapibus, vitae gravida sem commodo. In aliquam mauris in ante convallis vehicula. Fusce metus augue, finibus ut auctor vitae, vehicula nec sapien. Mauris interdum purus non tincidunt luctus. Fusce malesuada lobortis purus eu efficitur." />
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
