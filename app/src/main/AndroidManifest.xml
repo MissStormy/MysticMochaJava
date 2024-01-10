@@ -43,6 +43,9 @@
             android:exported="false" />
         <activity android:name ="com.example.mysticmochajava.activities.cafe.ShopActivity"
             android:exported="false" />
+        <activity
+            android:name=".activities.library.LibraryActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

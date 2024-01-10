@@ -1,6 +1,7 @@
 package com.example.mysticmochajava.activities.library;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,5 +16,8 @@ public class BookActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         setContentView(R.layout.activity_book);
+    }
+    public void OnClickBack(View v){
+        finish();
     }
 }

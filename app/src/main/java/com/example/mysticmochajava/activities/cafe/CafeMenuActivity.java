@@ -21,8 +21,7 @@ public class CafeMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cafe_menu);
     }
     public void OnClickBack(View v){
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
+        finish();
     }
     public void OnClickShop(View v){
         Intent intent = new Intent(this, ShopActivity.class);
