@@ -9,10 +9,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.mysticmochajava.R;
+import com.example.mysticmochajava.database.database;
 
 public class LoginActivity extends AppCompatActivity {
     Button SignInBtn, SignUpBtn;
-
+    database.AdminSQLiteOpenHelper db = new database.AdminSQLiteOpenHelper(this,"cafe",null,1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class LoginActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         setContentView(R.layout.activity_login);
+//        db.onUpgrade(db.getWritableDatabase(),1,2);
     }
 
     public void OnClickSignUp(View v){

@@ -1,16 +1,11 @@
 package com.example.mysticmochajava.activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -21,7 +16,6 @@ import com.example.mysticmochajava.activities.library.LibraryActivity;
 import com.example.mysticmochajava.activities.user.ProfileActivity;
 import com.example.mysticmochajava.database.database;
 import com.example.mysticmochajava.models.User;
-import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity{
     Button CafeBtn, ShopBtn, BookBtn, ProfileBtn;
@@ -36,6 +30,8 @@ public class HomeActivity extends AppCompatActivity{
         actionBar.hide();
         setContentView(R.layout.activity_home);
         user = db.getUser(this, getIntent().getExtras().getString("user"));
+        mummy();
+
     }
     public void OnClickCafe(View v){
         Intent intent = new Intent(this, CafeMenuActivity.class);
@@ -59,16 +55,28 @@ public class HomeActivity extends AppCompatActivity{
             mp.release();
         }
     }
-    public void iniciar (View view){
+    public void mummy(){
         destriur();
         mp = MediaPlayer.create(this, R.raw.mummy);
         mp.start();
         mp.setLooping(true);
     }
-    public void detener(View view){
+    public void door(){
+        destriur();
+        mp = MediaPlayer.create(this, R.raw.mummy);
+        mp.start();
+        mp.setLooping(false);
+    }
+    public void detener(){
         if (mp != null) {
             mp.stop();
             posicion = 0;
         }
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        detener();
+        destriur();
     }
 }

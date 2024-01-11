@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +22,8 @@ public class LoginSignUpActivity extends AppCompatActivity {
     EditText NameTxt, EmailTxt, PassTxt, PassVerifTxt;
     CheckBox TCChb;
     database.AdminSQLiteOpenHelper db = new database.AdminSQLiteOpenHelper(this,"cafe",null,1);
-
+    MediaPlayer mp;
+    int posicion = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +48,34 @@ public class LoginSignUpActivity extends AppCompatActivity {
                 if (db.addUser(this, user)) {
                     Intent intent = new Intent(this, HomeActivity.class);
                     intent.putExtra("user",user.getEmail());
+                    door();
                     startActivity(intent);
                     finish();
                 } else Toast.makeText(this, "There is already a user with that e-mail", Toast.LENGTH_LONG).show();
             } else Toast.makeText(this, "The passwords don't match", Toast.LENGTH_LONG).show();
         }else Toast.makeText(this, "You must accept the terms of service to crate an account", Toast.LENGTH_LONG).show();
+    }
+    public void destriur(){
+        if(mp !=null){
+            mp.release();
+        }
+    }
+    public void mummy (){
+        destriur();
+        mp = MediaPlayer.create(this, R.raw.mummy);
+        mp.start();
+        mp.setLooping(true);
+    }
+    public void door(){
+        destriur();
+        mp = MediaPlayer.create(this, R.raw.chirrido);
+        mp.start();
+        mp.setLooping(false);
+    }
+    public void detener(){
+        if (mp != null) {
+            mp.stop();
+            posicion = 0;
+        }
     }
 }

@@ -17,32 +17,69 @@ import java.util.List;
 
 public class database {
     public static class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
+        int version;
         public AdminSQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
             super(context, name, factory, version);
         }
-
-
         @Override
         public void onCreate(SQLiteDatabase db) {
             db.execSQL("create table users(email text primary key, name text, password text, type text)");
             db.execSQL("insert into users(email,name,password,type) values('admin@cofee.com','admin','admin','admin')");
+
             db.execSQL("create table menu(id integer primary key, name text, description text, price int)");
+
             db.execSQL("create table books(id integer primary key, title text, author text, synopsis text, genre text)");
+            db.execSQL("insert into books(title,author,synopsis,genre) values('La emperatriz de los etereos','Laura Gallego','Un mundo congelado y una chica que tiene que salvarlo','Fantasia')");
+            db.execSQL("insert into books(title,author,synopsis,genre) values('El libro de los cuentos legendarios','Miss Stormy','Un mundo de fantasia muy loco','Fantasia++')");
+            db.execSQL("insert into books(title,author,synopsis,genre) values('La trastienda batibaleno','Pierdomenico Baccallario','Una tienda de curiosidades muy rara','Fantasia')");
+            db.execSQL("insert into books(title,author,synopsis,genre) values('The Lord Of the rings','Tolkien','Un hobbit la lia parda','Aventura, Fantasia')");
+            db.execSQL("insert into books(title,author,synopsis,genre) values('Lo que Habita Dentro','Malenka Ramos','Es como IT pero en Españita','Terror')");
+            db.execSQL("insert into books(title,author,synopsis,genre) values('Los mitos de Cthulu','Lovecraft','Recopilacion de historias muy raras','Varios')");
+            db.execSQL("insert into books(title,author,synopsis,genre) values('Mundodisco','Terry Pratchet','En verdad es una saga de fantasia muy graciosa','Humor, Fantasia')");
+            db.execSQL("insert into books(title,author,synopsis,genre) values('Good Omens','Terry Pratchet, Neil Gaiman','Un angel y un demonio muy amigos','Apocaliptico')");
+            db.execSQL("insert into books(title,author,synopsis,genre) values('El libro del cementerio','Neil Gaiman','Un chaval que crece en un cementerio','Juvenil')");
+
             db.execSQL("create table events(id integer primary key, name text, description text, datetime text)");
+            version = 2;
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-            db.execSQL("drop table if exists users");
-            db.execSQL("drop table if exists menu");
-            db.execSQL("drop table if exists books");
-            db.execSQL("drop table if exists events");
+            if (i==0 && i1==2){
+                db.execSQL("drop table if exists users");
+                db.execSQL("drop table if exists menu");
+                db.execSQL("drop table if exists books");
+                db.execSQL("drop table if exists events");
 
-            db.execSQL("create table users(email text primary key, name text, password text, type text)");
-            db.execSQL("insert into users(email,name,password,type) values('admin@cofee.com','admin','admin','admin')");
-            db.execSQL("create table menu(id integer primary key, name text, description text, price int)");
-            db.execSQL("create table books(id integer primary key, title text, author text, synopsis text, genre text)");
-            db.execSQL("create table events(id integer primary key, name text, description text, datetime text)");
+                db.execSQL("create table users(email text primary key, name text, password text, type text)");
+                db.execSQL("insert into users(email,name,password,type) values('admin@cofee.com','admin','admin','admin')");
+
+                db.execSQL("create table menu(id integer primary key, name text, description text, price int)");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('La emperatriz de los etereos','Laura Gallego','Un mundo congelado y una chica que tiene que salvarlo','Fantasia')");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('El libro de los cuentos legendarios','Miss Stormy','Un mundo de fantasia muy loco','Fantasia++')");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('La trastienda batibaleno','Pierdomenico Baccallario','Una tienda de curiosidades muy rara','Fantasia')");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('The Lord Of the rings','Tolkien','Un hobbit la lia parda','Aventura, Fantasia')");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('Lo que Habita Dentro','Malenka Ramos','Es como IT pero en Españita','Terror')");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('Los mitos de Cthulu','Lovecraft','Recopilacion de historias muy raras','Varios')");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('Mundodisco','Terry Pratchet','En verdad es una saga de fantasia muy graciosa','Humor, Fantasia')");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('Good Omens','Terry Pratchet, Neil Gaiman','Un angel y un demonio muy amigos','Apocaliptico')");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('El libro del cementerio','Neil Gaiman','Un chaval que crece en un cementerio','Juvenil')");
+
+                db.execSQL("create table books(id integer primary key, title text, author text, synopsis text, genre text)");
+
+                db.execSQL("create table events(id integer primary key, name text, description text, datetime text)");
+            }
+            if (i==1 && i1 == 2){
+                db.execSQL("insert into books(title,author,synopsis,genre) values('La emperatriz de los etereos','Laura Gallego','Un mundo congelado y una chica que tiene que salvarlo','Fantasia')");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('El libro de los cuentos legendarios','Miss Stormy','Un mundo de fantasia muy loco','Fantasia++')");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('La trastienda batibaleno','Pierdomenico Baccallario','Una tienda de curiosidades muy rara','Fantasia')");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('The Lord Of the rings','Tolkien','Un hobbit la lia parda','Aventura, Fantasia')");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('Lo que Habita Dentro','Malenka Ramos','Es como IT pero en Españita','Terror')");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('Los mitos de Cthulu','Lovecraft','Recopilacion de historias muy raras','Varios')");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('Mundodisco','Terry Pratchet','En verdad es una saga de fantasia muy graciosa','Humor, Fantasia')");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('Good Omens','Terry Pratchet, Neil Gaiman','Un angel y un demonio muy amigos','Apocaliptico')");
+                db.execSQL("insert into books(title,author,synopsis,genre) values('El libro del cementerio','Neil Gaiman','Un chaval que crece en un cementerio','Juvenil')");
+            }
         }
         public boolean addUser(Context context, User user){
             User tempuser = getUser(context,user.getEmail());
@@ -185,6 +222,9 @@ public class database {
             cursor.close();
             database.close();
             return menuEntryList;
+        }
+        public int getVersion() {
+            return version;
         }
     }
 }
